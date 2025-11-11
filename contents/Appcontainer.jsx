@@ -1,9 +1,11 @@
 import Header from "./Header";
 import Body from "./Body";
-import {useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Appcontainer() {
-  const [addTask, setAddtask] = useState([]);
+  const [addTask, setAddtask] = useState(
+    JSON.parse(localStorage.getItem("data")) || []
+  );
   const [editTaskcontainer, setEditTaskcontainer] = useState(null);
 
   function editTask(id) {
@@ -17,13 +19,17 @@ export default function Appcontainer() {
   }
 
   function taskComplete(id) {
-    console.log(id);
     setAddtask((prev) =>
       prev.map((elem) =>
         elem.id === id ? { ...elem, isCompleted: !elem.isCompleted } : elem
       )
     );
   }
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(addTask));
+  }, [addTask]);
+
   return (
     <div className="appContainer">
       <Header
