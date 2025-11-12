@@ -27,7 +27,7 @@ export default function Appcontainer() {
   }
 
   useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(addTask));
+    localStorage.setItem("data", JSON.stringify(addTask.filter((task)=>task.isCompleted === false)));
   }, [addTask]);
 
   return (
