@@ -1,4 +1,5 @@
-import Appcontainer from "../contents/Appcontainer"
+import Appcontainer from "./contents/Appcontainer"
+
 function App() {
 
   return (

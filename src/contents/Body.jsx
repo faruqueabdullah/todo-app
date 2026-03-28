@@ -2,15 +2,15 @@
 export default function Body({ addTask, onDelete, taskComplete, editTask }) {
   
   return (
-    <ul>
+    <ul className="flex flex-col gap-2 w-full">
       {addTask.map((elem) => (
         <li
           key={elem.id}
-          className={elem.isCompleted ? "complete" : ""}
+          className={`border rounded-xl p-2 cursor-pointer flex items-center justify-between ${elem.isCompleted ? "bg-red-400 line-through" : ""}`}
           onClick={() => taskComplete(elem.id)}
         >
           <p>{elem.task}</p>
-          <div className="buttonContainer">
+          <div className="flex items-center justify-between gap-2">
             <div
               title="edit task"
               className="edittask"
