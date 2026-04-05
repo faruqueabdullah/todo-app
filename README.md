@@ -4,11 +4,7 @@ A simple and interactive Todo application built using React that allows users to
 
 🚀 Live Demo
 
-👉 
-
-💻 GitHub Repository
-
-👉 Add your GitHub repo link here
+👉 https://todo-app-olive-sigma-61.vercel.app/
 
 📌 Features
 ➕ Add new tasks
