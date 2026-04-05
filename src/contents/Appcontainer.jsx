@@ -3,6 +3,8 @@ import Body from "./Body";
 import { useEffect, useState } from "react";
 
 export default function Appcontainer() {
+
+  // getting tasks from localStorage
   const [addTask, setAddtask] = useState(
     JSON.parse(localStorage.getItem("data")) || [],
   );
@@ -31,6 +33,7 @@ export default function Appcontainer() {
     );
   }
 
+  // adding task to localStorage
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(addTask));
   }, [addTask]);
@@ -38,7 +41,7 @@ export default function Appcontainer() {
   return (
     <div className="flex flex-col mx-auto mt-25 w-120">
       <h1 className="text-2xl font-semibold py-3 px-5">
-        My Todo's <i className="fa-solid fa-book"></i>
+        My Todos <i className="fa-solid fa-book"></i>
       </h1>
 
       <div className="w-full flex justify-center items-center flex-col  border p-3 rounded-xl">
